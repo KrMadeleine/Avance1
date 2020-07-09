@@ -122,11 +122,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML private ComboBox<cclima> ComboBox_CCLima;
     
     @FXML private ComboBox<responsablestrabajos> ComboBox_Involucrado1;
-    @FXML private ComboBox<?> ComboBox_Involucrado3;
-    @FXML private ComboBox<?> ComboBox_Involucrado2;
-    @FXML private ComboBox<?> ComboBox_Involucrado4;
-    @FXML private ComboBox<?> ComboBox_Involucrado5;
-    @FXML private ComboBox<?> ComboBox_Involucrado6;
+    private ComboBox<responsablestrabajos> ComboBox_Involucrado2;
+    private ComboBox<responsablestrabajos> ComboBox_Involucrado3;
+    private ComboBox<responsablestrabajos> ComboBox_Involucrado4;
+    private ComboBox<responsablestrabajos> ComboBox_Involucrado5;
+    private ComboBox<responsablestrabajos> ComboBox_Involucrado6;
    
 
     @FXML private Text TextNombreCCLima;
@@ -233,6 +233,7 @@ public class FXMLDocumentController implements Initializable {
         
         ComboBox_Involucrado1.setItems(listaResp);
    
+           
         //Enlazar Columnas y Atributos
         clmnOT.setCellValueFactory(new PropertyValueFactory<datospermiso, String>("numeroOT"));
         clmnprog.setCellValueFactory(new PropertyValueFactory<datospermiso, String>("prog"));
@@ -248,7 +249,10 @@ public class FXMLDocumentController implements Initializable {
         clmndescripcion.setCellValueFactory(new PropertyValueFactory<datospermiso, String>("descripcion"));
 
         clmnSupervisor.setCellValueFactory(new PropertyValueFactory<datospermiso, jefaturasupervision>("jefaturasupervision"));
+        
         clmnResponsable.setCellValueFactory(new  PropertyValueFactory<datospermiso , responsablestrabajos>("responsablestrabajos"));
+        
+        
         clmnCCLima.setCellValueFactory(new PropertyValueFactory<datospermiso, cclima>("cclima"));
         clmnOperaciones.setCellValueFactory(new PropertyValueFactory<datospermiso, operadores>("operadores"));
         
